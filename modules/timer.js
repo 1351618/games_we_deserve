@@ -1,6 +1,9 @@
 // todo timer.js - таймер
 
 const SoundsTimerMP3 = document.getElementById("sounds-timer-mp3");
+const playButton = document.getElementById("playButton");
+const pauseButton = document.getElementById("pauseButton");
+
 let isTimerRunning = false;
 let intervalId;
 let second;

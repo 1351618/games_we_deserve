@@ -33,6 +33,13 @@
 .selection-panel:hover {
     transform: translateX(85px);
 }
+.sounds-timer-mp3 {
+    /* display: none; */
+    position: absolute;
+    top: 100px;
+    /* left: -79px; */
+    /* transform: rotate(90deg); */
+}
 
 .side-navigation-bar {
     background-color: var(--background-Color-Main);

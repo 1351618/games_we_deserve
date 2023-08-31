@@ -6,6 +6,7 @@
 // todo index.js
 
 import Timer from "./modules/timer.js";
+import "./modules/record_player.js";
 
 const blockTimer = document.createElement("div");
 blockTimer.classList.add("block-timer");
