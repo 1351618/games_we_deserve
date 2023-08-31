@@ -1,0 +1,35 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.body {
+    background-color: rgb(70, 202, 158);
+}
+
+.block-timer {
+    height: 100px;
+    width: 100px;
+    /* background-color: #000000; */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.timer {
+    position: absolute;
+    background-color: #0000ff;
+    height: 100%;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    font-size: 10vw;
+    font-weight: bold;
+    color: #f5fffa;
+    animation: 1s;
+}
