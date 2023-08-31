@@ -18,8 +18,8 @@
 .selection-panel {
     background-color: var(--background-Color-Main);
     position: fixed;
-    /* left: -85px; */
-    left: 0px;
+    left: -85px;
+    /* left: 0px; */
     height: 100vh;
     width: 100px;
     color: yellowgreen;
@@ -33,12 +33,12 @@
     transition: transform 0.3s;
 }
 .selection-panel:hover {
-    /* transform: translateX(85px); */
+    transform: translateX(85px);
 }
 .sounds-timer-mp3 {
     position: absolute;
     top: 0;
-    border: 1px solid #f9fd00;
+    border: 1px solid #000da7;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -47,12 +47,24 @@
 .sounds-timer-mp3__audio {
     display: none;
 }
+
+.sounds-timer-mp3 button {
+    color: #ffffff;
+    background-color: var(--background-Color-Main);
+    cursor: pointer;
+}
+.sounds-timer-mp3 button:hover {
+    background-color: #000da7;
+}
 .sounds-timer-mp3__sound {
     display: flex;
     justify-content: space-between;
 }
 .sounds-timer-mp3__sound p {
     font-size: 12px;
+}
+.sounds-timer-mp3__sound input {
+    cursor: pointer;
 }
 
 .side-navigation-bar {
