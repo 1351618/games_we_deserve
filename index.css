@@ -18,7 +18,8 @@
 .selection-panel {
     background-color: var(--background-Color-Main);
     position: fixed;
-    left: -85px;
+    /* left: -85px; */
+    left: 0px;
     height: 100vh;
     width: 100px;
     color: yellowgreen;
@@ -28,17 +29,30 @@
     display: flex;
     flex-direction: column;
     justify-content: center;
+
     transition: transform 0.3s;
 }
 .selection-panel:hover {
-    transform: translateX(85px);
+    /* transform: translateX(85px); */
 }
 .sounds-timer-mp3 {
-    /* display: none; */
     position: absolute;
-    top: 100px;
-    /* left: -79px; */
-    /* transform: rotate(90deg); */
+    top: 0;
+    border: 1px solid #f9fd00;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+}
+.sounds-timer-mp3__audio {
+    display: none;
+}
+.sounds-timer-mp3__sound {
+    display: flex;
+    justify-content: space-between;
+}
+.sounds-timer-mp3__sound p {
+    font-size: 12px;
 }
 
 .side-navigation-bar {

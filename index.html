@@ -10,11 +10,23 @@
     </head>
     <body class="body">
         <div class="selection-panel">
-            <audio class="sounds-timer-mp3" id="sounds-timer-mp3" controls>
-                <source src="./sounds/timer01.mp3" type="audio/mpeg" />
-            </audio>
-            <button id="playButton">Play</button>
-            <button id="pauseButton">Pause</button>
+            <div class="sounds-timer-mp3">
+                <p>Звук таймера</p>
+                <audio
+                    class="sounds-timer-mp3__audio"
+                    id="sounds-timer-mp3"
+                    src="./sounds/timer01.mp3"
+                    controls
+                >
+                    <!-- <source src="./sounds/timer01.mp3" type="audio/mpeg" /> -->
+                </audio>
+                <button id="playButton">Play</button>
+                <button id="pauseButton">Pause</button>
+                <div class="sounds-timer-mp3__sound">
+                    <p>Откл. звук</p>
+                    <input type="checkbox" />
+                </div>
+            </div>
         </div>
         <div class="side-navigation-bar">
             <ul>
