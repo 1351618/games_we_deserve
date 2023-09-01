@@ -7,9 +7,9 @@
 
 import Timer from "./modules/timer.js";
 import "./modules/record_player.js";
+import "./modules/start.js";
 
-const blockTimer = document.createElement("div");
-blockTimer.classList.add("block-timer");
+const blockTimer = document.querySelector(".block-timer");
 
 blockTimer.appendChild(Timer);
 

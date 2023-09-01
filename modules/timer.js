@@ -1,15 +1,16 @@
 // todo timer.js - таймер
 
 const SoundsTimerMP3 = document.getElementById("sounds-timer-mp3");
-const playButton = document.getElementById("playButton");
-const pauseButton = document.getElementById("pauseButton");
+// const playButton = document.getElementById("playButton");
+// const pauseButton = document.getElementById("pauseButton");
+const BlockTimer = document.querySelector(".block-timer");
 
 let isTimerRunning = false;
 let intervalId;
 let second;
 // todo визуальный блок div
-const Timer = document.createElement("div");
-Timer.classList.add("timer");
+
+const Timer = document.querySelector(".timer");
 Timer.textContent = 60;
 
 let radius = 50;
@@ -19,9 +20,9 @@ let centerY = 45;
 let colorRiskDefault = "#8f1b1b";
 let colorRiskActive = "#2ccf00";
 
-function timerRisk(sec) {
+export function timerRisk(sec) {
     for (let i = 0; i < 60; i++) {
-        console.log(sec);
+        // console.log(sec);
         const Risk = document.createElement("span");
         Risk.classList.add("risk", `${i + 1}`);
         // Risk.style.backgroundColor = colorRiskDefault;
@@ -62,11 +63,12 @@ function counting() {
     timerRisk(second);
     if (second === 0) {
         clearInterval(intervalId);
-        console.log("время вышло");
+        // console.log("время вышло");
         isTimerRunning = false;
         stopSound();
         translationToOriginal();
         timerRisk(0);
+        BlockTimer.classList.remove("play-start");
     }
 }
 // todo перевот в исходное
@@ -79,20 +81,21 @@ function translationToOriginal() {
 }
 
 // todo запуск остановка таймера
-function TimerStartEnd() {
+export function TimerStartEnd() {
     second = 60;
     if (!isTimerRunning) {
-        console.log("таймер запущен");
+        // console.log("таймер запущен");
         isTimerRunning = true;
         intervalId = setInterval(counting, 1000);
         playSound();
     } else {
         clearInterval(intervalId);
-        console.log("таймер остановлен");
+        // console.log("таймер остановлен");
         Timer.textContent = 60;
         isTimerRunning = false;
         stopSound();
         timerRisk();
+        BlockTimer.classList.remove("play-start");
     }
 }
 
