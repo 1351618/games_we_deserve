@@ -1,106 +1,132 @@
 // todo timer.js - таймер
 
-const SoundsTimerMP3 = document.getElementById("sounds-timer-mp3");
-// const playButton = document.getElementById("playButton");
-// const pauseButton = document.getElementById("pauseButton");
-const BlockTimer = document.querySelector(".block-timer");
+import { styleEffect } from "./style.js";
 
-let isTimerRunning = false;
-let intervalId;
-let second;
-// todo визуальный блок div
+const selectElement = document.querySelector(".selection__60-30-15 select");
+const bodyTimerWind = document.querySelector(".body__timer-wind");
 
-const Timer = document.querySelector(".timer");
-Timer.textContent = 60;
+// Проверяем, есть ли сохраненное значение в localStorage
+const savedValue = localStorage.getItem("selectedValue");
+let timerInterval; // Переменная для хранения интервала
+const Timer = document.querySelector(".timer-wind__timer");
+let WindTimerHeight = 100;
+let isTransitionHandled = false;
 
-let radius = 50;
-let centerX = 50;
-let centerY = 45;
+// Если есть сохраненное значение, устанавливаем его в элемент <select>
+if (savedValue) {
+    selectElement.value = savedValue;
+}
+let countdownTime = savedValue === null ? "60" : savedValue;
+console.log(savedValue);
+Timer.textContent = countdownTime;
+Timer.style.fontSize = "60px";
+riscRendering();
 
-let colorRiskDefault = "#8f1b1b";
-let colorRiskActive = "#2ccf00";
+// todo получаем от пользователя время таймера
+selectElement.addEventListener("change", function () {
+    const selectedValue = selectElement.value;
+    localStorage.setItem("selectedValue", selectedValue);
+    console.log("Выбранное значение:", selectedValue);
+    riscRendering();
+});
 
-export function timerRisk(sec) {
-    for (let i = 0; i < 60; i++) {
-        // console.log(sec);
-        const Risk = document.createElement("span");
-        Risk.classList.add("risk", `${i + 1}`);
-        // Risk.style.backgroundColor = colorRiskDefault;
-        Risk.style.backgroundColor =
-            sec >= i + 1 ? colorRiskActive : colorRiskDefault;
+Timer.addEventListener("transitionend", function (event) {
+    if (isTransitionHandled) {
+        return; // Выходим, если обработчик уже вызван
+    }
+    if (event.propertyName === "width" || event.propertyName === "height") {
+        // Здесь блок завершил изменение размера
+        WindTimerHeight = Timer.offsetHeight;
+        Timer.style.fontSize = WindTimerHeight > 150 ? "200px" : "60px";
+        riscRendering();
+        isTransitionHandled = true; // Устанавливаем флаг в true
+        setTimeout(() => {
+            // Отложенный сброс флага через 100 миллисекунд
+            isTransitionHandled = false;
+        }, 100);
+    }
+});
 
-        const angle = (90 - i * 6) * (Math.PI / 180); // Измененная формула
-        const x = centerX + radius * Math.cos(angle);
-        const y = centerY + radius * Math.sin(angle);
+// todo отрисовка рисок
+function riscRendering() {
+    // Очищаем существующие дочерние элементы <span>
+    const childSpans = Timer.querySelectorAll("span");
+    childSpans.forEach((span) => {
+        Timer.removeChild(span);
+    });
 
-        Risk.style.left = x + "px";
-        Risk.style.top = y + "px";
-        Risk.style.transform = `rotate(-${i * 6}deg)`;
-        Timer.appendChild(Risk);
+    const numRisks = 60; // Количество индикаторов риска
+    const centerX = WindTimerHeight === 100 ? 45 : 125; // Координата X центра
+    const centerY = WindTimerHeight === 100 ? 50 : 145; // Координата Y центра
+    const radius = WindTimerHeight === 100 ? 55 : 165; // Учитываем отступ
+
+    for (let i = 1; i <= numRisks; i++) {
+        const angle = (360 / numRisks) * i; // Вычисляем угол для каждого индикатора
+        const radians = (angle * Math.PI) / 180; // Переводим в радианы
+
+        const timeRisc = document.createElement("span");
+        timeRisc.classList.add("risk", `${i}`);
+
+        // Вычисляем позиции с использованием тригонометрии относительно центра
+        const x = centerX + radius * Math.cos(radians);
+        const y = centerY + radius * Math.sin(radians);
+
+        // Устанавливаем позиции
+        timeRisc.style.top = `${y}px`;
+        timeRisc.style.left = `${x}px`;
+
+        // Применяем вращение к индикатору риска
+        timeRisc.style.transform = `rotate(${angle}deg)`;
+
+        timeRisc.style.backgroundColor =
+            i <= countdownTime ? "#00dd09" : "#ff0000";
+
+        // ! выставляем цвет риски
+
+        // Timer.style.backgroundColor = countdownTime < 10 ? "#ff0000" : "";
+        Timer.classList.toggle("little-time", countdownTime < 10);
+
+        Timer.appendChild(timeRisc);
     }
 }
-timerRisk();
 
-// todo звук таймера
-function playSound() {
-    SoundsTimerMP3.play();
-    SoundsTimerMP3.currentTime = 0;
-}
-function stopSound() {
-    SoundsTimerMP3.pause();
-    SoundsTimerMP3.currentTime = 0;
-}
-
-// todo вывод таймера
-function counting() {
-    if (second - 1 < 10) {
-        Timer.textContent = "0" + (second - 1);
-        Timer.style.backgroundColor = "#ff0000";
-    } else {
-        Timer.textContent = (second - 1).toString();
-    }
-    second--;
-    timerRisk(second);
-    if (second === 0) {
-        clearInterval(intervalId);
-        // console.log("время вышло");
-        isTimerRunning = false;
-        stopSound();
-        translationToOriginal();
-        timerRisk(0);
-        BlockTimer.classList.remove("play-start");
-    }
-}
-// todo перевот в исходное
-function translationToOriginal() {
+// остановка и сброс таймера
+export function TimerStop() {
+    // Остановить интервал, когда countdownTime достигнет 0
+    clearInterval(timerInterval);
+    timerInterval = undefined;
+    Timer.textContent = "✖";
+    bodyTimerWind.classList.remove("game-start");
+    riscRendering();
+    styleEffect(1);
     setTimeout(() => {
-        Timer.textContent = 60;
-        Timer.style.backgroundColor = "#0000ff";
-        timerRisk();
-    }, 5000);
+        countdownTime = savedValue;
+        Timer.textContent = countdownTime;
+        riscRendering();
+    }, 2000);
 }
 
-// todo запуск остановка таймера
-export function TimerStartEnd() {
-    second = 60;
-    if (!isTimerRunning) {
-        // console.log("таймер запущен");
-        isTimerRunning = true;
-        intervalId = setInterval(counting, 1000);
-        playSound();
-    } else {
-        clearInterval(intervalId);
-        // console.log("таймер остановлен");
-        Timer.textContent = 60;
-        isTimerRunning = false;
-        stopSound();
-        timerRisk();
-        BlockTimer.classList.remove("play-start");
+// запуск таймера
+export function TimerStart() {
+    // Если таймер уже выполняется, сбрасываем его
+    if (timerInterval) {
+        clearInterval(timerInterval);
+        timerInterval = undefined;
+        return;
     }
+
+    // Создание интервала и сохранение идентификатора
+    timerInterval = setInterval(() => {
+        if (countdownTime != 0) {
+            Timer.textContent = countdownTime - 1;
+        } else {
+            TimerStop();
+        }
+        countdownTime--;
+        riscRendering();
+    }, 1000);
 }
 
 Timer.addEventListener("click", function () {
-    TimerStartEnd();
+    TimerStart();
 });
-
-export default Timer;

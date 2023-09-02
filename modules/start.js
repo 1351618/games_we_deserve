@@ -1,16 +1,27 @@
 // todo start.js
-import { TimerStartEnd, timerRisk } from "./timer.js";
-const StartButto = document.querySelector(".start__button");
-const BlockTimer = document.querySelector(".block-timer");
 
-const Timer = document.querySelector(".timer");
+import { styleEffect } from "./style.js";
+import { TimerStart, TimerStop } from "./timer.js";
 
-StartButto.addEventListener("click", () => {
-    console.log("start");
-    BlockTimer.classList.add("play-start");
-    TimerStartEnd();
-    // Timer.style.fontSize = "200px";
-    // Timer.style.width = "300px";
-    // Timer.style.height = "300px";
-    timerRisk();
+const btStart = document.querySelector(".bt-start");
+const bodyTimerWind = document.querySelector(".body__timer-wind");
+
+btStart.addEventListener("click", () => {
+    bodyTimerWind.classList.add("game-start");
+    TimerStart();
+    setTimeout(() => {
+        styleEffect(2); // Вызываем с задержкой
+    }, 0);
+});
+
+window.addEventListener("keydown", (event) => {
+    if (event.key === "Enter") {
+        bodyTimerWind.classList.add("game-start");
+        styleEffect(2);
+        TimerStart();
+    }
+    if (event.key === "Escape") {
+        // bodyTimerWind.classList.remove("game-start");
+        TimerStop();
+    }
 });

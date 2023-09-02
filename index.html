@@ -7,28 +7,41 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./index.css" />
         <!-- <title>игры которые мы заслужили</title> -->
+        <style id="style">
+            :root {
+                --main-background: #240088;
+                --main-border: #14004d;
+            }
+        </style>
     </head>
     <body class="body">
-        <div class="selection-panel">
-            <div class="sounds-timer-mp3">
+        <!--todo левая панель - настройки и прочее -->
+        <div class="body__selection">
+            <div class="selection__sounds-timer-mp3">
                 <p>Звук таймера</p>
                 <audio
                     class="sounds-timer-mp3__audio"
-                    id="sounds-timer-mp3"
+                    id="sounds-timer-mp3__audio"
                     src="./sounds/timer01.mp3"
-                    controls
-                >
-                    <!-- <source src="./sounds/timer01.mp3" type="audio/mpeg" /> -->
-                </audio>
-                <button id="playButton">Play</button>
-                <button id="pauseButton">Pause</button>
-                <div class="sounds-timer-mp3__sound">
+                ></audio>
+                <button id="sounds-timer-mp3__playBt">Play</button>
+                <button id="sounds-timer-mp3__pauseBt">Pause</button>
+                <div class="sounds-timer-mp3__mute">
                     <p>Откл. звук</p>
-                    <input id="turn_off_sound" type="checkbox" />
+                    <input id="mute" type="checkbox" />
                 </div>
             </div>
+            <div class="selection__60-30-15">
+                <select name="" id="">
+                    <option value="60">60c</option>
+                    <option value="30">30c</option>
+                    <option value="15">15c</option>
+                </select>
+            </div>
+            <button id="save-changes">сохранить изменения</button>
         </div>
-        <div class="side-navigation-bar">
+        <!--todo правая панель  навигация в конкурсах -->
+        <div class="body__navigation">
             <ul>
                 <li class="active">гонг</li>
                 <li>26</li>
@@ -36,21 +49,17 @@
                 <li>скорость</li>
             </ul>
         </div>
-
-        <!-- <h1>игры которые мы заслужили</h1> -->
-        <div class="video">
-            <video controls>
-                <source src="./video/video_test.mp4" type="video/mp4" />
-                Ваш браузер не поддерживает воспроизведение видео.
-            </video>
+        <div class="body__timer-wind">
+            <div class="timer-wind__timer"></div>
         </div>
-        <div class="start">
-            <button class="start__button">start</button>
+        <!--todo основной экран -->
+        <div class="body__main">
+            <!-- <h1>игры которые мы заслужили</h1> -->
+            <div class="body__main_video">1</div>
+            <div class="body__main_bt-start">
+                <button class="bt-start">start</button>
+            </div>
         </div>
-        <div class="block-timer">
-            <div class="timer"></div>
-        </div>
-
         <script src="./index.js" type="module"></script>
     </body>
 </html>
