@@ -23,18 +23,66 @@
     background-color: var(--main-background);
     width: 100px;
     height: 100%;
-    /* left: -80px; */
-    left: 0px;
+    left: -80px;
+    /* left: 0px; */
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     border: 2px solid var(--main-border);
     box-shadow: var(--main-shadow);
     transition: transform 400ms;
     z-index: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
 }
-/* .body__selection:hover {
+.body__selection:hover {
     transform: translateX(80px);
-} */
+}
+
+.selection__sounds-timer-mp3 {
+    color: #fbc700;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 3px;
+    width: 100%;
+    align-items: center;
+}
+.selection__sounds-timer-mp3 div {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    border: 1px solid var(--main-border);
+}
+.sounds-timer-mp3__buton button {
+    width: 40px;
+    color: #fbc700;
+    background-color: var(--main-background);
+    border-radius: 4px;
+    border: 1px solid #fbc700;
+}
+
+.selection__60-30-15 {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.selection__60-30-15 select {
+    width: 90%;
+    /* background-color: var(--main-background); */
+    border-radius: 4px;
+    border: 1px solid #fbc700;
+}
+
+.body__selection button {
+    width: 90%;
+    /* background-color: var(--main-background); */
+    border-radius: 4px;
+    border: 1px solid #fbc700;
+}
 
 .body__navigation {
     position: fixed;

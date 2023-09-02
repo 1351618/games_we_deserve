@@ -24,10 +24,12 @@
                     id="sounds-timer-mp3__audio"
                     src="./sounds/timer01.mp3"
                 ></audio>
-                <button id="sounds-timer-mp3__playBt">Play</button>
-                <button id="sounds-timer-mp3__pauseBt">Pause</button>
+                <div class="sounds-timer-mp3__buton">
+                    <button id="sounds-timer-mp3__playBt">▶</button>
+                    <button id="sounds-timer-mp3__pauseBt">◼</button>
+                </div>
                 <div class="sounds-timer-mp3__mute">
-                    <p>Откл. звук</p>
+                    <p>🔇</p>
                     <input id="mute" type="checkbox" />
                 </div>
             </div>
@@ -57,7 +59,7 @@
             <!-- <h1>игры которые мы заслужили</h1> -->
             <div class="body__main_video">1</div>
             <div class="body__main_bt-start">
-                <button class="bt-start">start</button>
+                <button class="bt-start" style="display: none">start</button>
             </div>
         </div>
         <script src="./index.js" type="module"></script>

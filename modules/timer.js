@@ -4,6 +4,7 @@ import { styleEffect } from "./style.js";
 
 const selectElement = document.querySelector(".selection__60-30-15 select");
 const bodyTimerWind = document.querySelector(".body__timer-wind");
+const TimerMP3_Audio = document.getElementById("sounds-timer-mp3__audio");
 
 // Проверяем, есть ли сохраненное значение в localStorage
 const savedValue = localStorage.getItem("selectedValue");
@@ -99,6 +100,8 @@ export function TimerStop() {
     bodyTimerWind.classList.remove("game-start");
     riscRendering();
     styleEffect(1);
+    TimerMP3_Audio.currentTime = 0;
+    TimerMP3_Audio.pause();
     setTimeout(() => {
         countdownTime = savedValue;
         Timer.textContent = countdownTime;
@@ -114,7 +117,7 @@ export function TimerStart() {
         timerInterval = undefined;
         return;
     }
-
+    TimerMP3_Audio.play();
     // Создание интервала и сохранение идентификатора
     timerInterval = setInterval(() => {
         if (countdownTime != 0) {
