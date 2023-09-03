@@ -5,6 +5,7 @@ import { styleEffect } from "./style.js";
 const selectElement = document.querySelector(".selection__60-30-15 select");
 const bodyTimerWind = document.querySelector(".body__timer-wind");
 const TimerMP3_Audio = document.getElementById("sounds-timer-mp3__audio");
+const btStopTim = document.querySelector(".timer-wind__stop-tim");
 
 // Проверяем, есть ли сохраненное значение в localStorage
 const savedValue = localStorage.getItem("selectedValue");
@@ -94,6 +95,7 @@ function riscRendering() {
 // остановка и сброс таймера
 export function TimerStop() {
     // Остановить интервал, когда countdownTime достигнет 0
+    btStopTim.classList.remove("active");
     clearInterval(timerInterval);
     timerInterval = undefined;
     Timer.textContent = "✖";
@@ -111,6 +113,7 @@ export function TimerStop() {
 
 // запуск таймера
 export function TimerStart() {
+    // btStopTim.classList.add("active");
     // Если таймер уже выполняется, сбрасываем его
     if (timerInterval) {
         clearInterval(timerInterval);
