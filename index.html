@@ -40,15 +40,58 @@
                     <option value="15">15c</option>
                 </select>
             </div>
-            <button id="save-changes">сохранить изменения</button>
+            <div class="selection__list">
+                <p>выбор конкурса</p>
+                <ul>
+                    <li>
+                        <span>ручка в жопе</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li>
+                        <span>длинный язык</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li>
+                        <span>задорный лещь</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li>
+                        <span>basketball</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li>
+                        <span>basketball</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li>
+                        <span>basketball</span>
+                        <input type="checkbox" />
+                    </li>
+                </ul>
+            </div>
+            <button class="selection-save" id="save-changes">
+                сохранить изменения
+            </button>
         </div>
         <!--todo правая панель  навигация в конкурсах -->
         <div class="body__navigation">
             <ul>
-                <li class="active">веселый прыщ на спине</li>
-                <li>26</li>
-                <li>карта</li>
-                <li>грустный прыщ на спине</li>
+                <li class="active">
+                    <span>ручка в жопе</span>
+                    <button class="body__navigation_bt-del">✖</button>
+                </li>
+                <li>
+                    <span>длинный язык</span>
+                    <button class="body__navigation_bt-del">✖</button>
+                </li>
+                <li>
+                    <span>задорный лещь</span>
+                    <button class="body__navigation_bt-del">✖</button>
+                </li>
+                <li>
+                    <span>basketball</span>
+                    <button class="body__navigation_bt-del">✖</button>
+                </li>
             </ul>
         </div>
         <div class="body__timer-wind">

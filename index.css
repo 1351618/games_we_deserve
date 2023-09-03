@@ -1,6 +1,9 @@
 :root {
     --main-shadow: 0 0 8px var(--main-border), 0 0 16px var(--main-border),
         inset 0 0 4px var(--main-border), inset 0 0 8px var(--main-border);
+    --background-text: #f5deb3;
+    --box-shadow-text: 0 0 8px #ff8800, 0 0 16px #ff8800, inset 0 0 4px #ff8800,
+        inset 0 0 8px #ff8800;
 }
 
 * {
@@ -17,14 +20,39 @@
     transition: background-color 0.3s ease;
     overflow: hidden;
 }
+button,
+select,
+input {
+    cursor: pointer;
+}
+
+/* Цвет полосы прокрутки */
+::-webkit-scrollbar {
+    width: 8px; /* Ширина полосы прокрутки */
+}
+
+/* Стиль "бегунка" полосы прокрутки (полоса, которую можно перетаскивать) */
+::-webkit-scrollbar-thumb {
+    background-color: #ff9800; /* Цвет "бегунка" */
+    border-radius: 5px; /* Скругление углов "бегунка" */
+}
+
+/* Стиль фона полосы прокрутки */
+::-webkit-scrollbar-track {
+    background-color: #f5deb3; /* Цвет фона полосы прокрутки */
+    border-radius: 5px;
+}
+
+/*todo *********************************************************/
+/*todo ******** selection *************************************/
 
 .body__selection {
     position: fixed;
     background-color: var(--main-background);
     width: 100px;
     height: 100%;
-    left: -80px;
-    /* left: 0px; */
+    /* left: -80px; */
+    left: 0px;
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     border: 2px solid var(--main-border);
@@ -35,6 +63,8 @@
     flex-direction: column;
     align-items: center;
     gap: 5px;
+    justify-content: space-between;
+    padding: 20px 0;
 }
 .body__selection:hover {
     transform: translateX(80px);
@@ -58,10 +88,11 @@
 }
 .sounds-timer-mp3__buton button {
     width: 40px;
-    color: #fbc700;
-    background-color: var(--main-background);
+    color: var(--main-background);
+    background-color: #f5deb3;
     border-radius: 4px;
     border: 1px solid #fbc700;
+    box-shadow: var(--box-shadow-text);
 }
 
 .selection__60-30-15 {
@@ -72,16 +103,55 @@
 }
 .selection__60-30-15 select {
     width: 90%;
-    /* background-color: var(--main-background); */
+    background-color: #f5deb3;
     border-radius: 4px;
-    border: 1px solid #fbc700;
+    box-shadow: var(--box-shadow-text);
+    border: 1px solid #ff8800;
 }
 
-.body__selection button {
+.selection__list {
+    width: 100%;
+    color: #ff9800;
+    text-align: center;
+}
+
+.selection__list ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    overflow-y: auto;
+    height: 60vh;
+    border: 1px solid var(--main-border);
+    box-shadow: var(--main-shadow);
+    justify-content: space-evenly;
+}
+
+.selection__list ul li {
+    list-style: none;
     width: 90%;
-    /* background-color: var(--main-background); */
+    background-color: #f5deb3;
     border-radius: 4px;
-    border: 1px solid #fbc700;
+    box-shadow: var(--box-shadow-text);
+    border: 1px solid #ff8800;
+    padding-bottom: 15px;
+    position: relative;
+    text-align: center;
+    margin-top: 6px;
+    color: var(--main-background);
+}
+
+.selection__list ul li input {
+    position: absolute;
+    bottom: 3px;
+    right: 0;
+}
+
+.selection-save {
+    width: 90%;
+    background-color: #f5deb3;
+    border-radius: 4px;
+    box-shadow: var(--box-shadow-text);
+    border: 1px solid #ff8800;
 }
 /*todo *********************************************************/
 /*todo ******** navigation *************************************/
@@ -112,6 +182,8 @@
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    overflow-y: auto;
+    direction: rtl;
 }
 .body__navigation ul li {
     min-height: 50px;
@@ -124,11 +196,28 @@
     justify-content: center;
     align-items: center;
     text-align: center;
+    list-style: none;
+    position: relative;
 }
 .body__navigation ul li.active {
-    box-shadow: 0 0 8px #ff8800, 0 0 16px #ff8800, inset 0 0 4px #ff8800,
-        inset 0 0 8px #ff8800;
+    box-shadow: var(--box-shadow-text);
     border: 1px solid #ff8800;
+}
+.body__navigation_bt-del {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 20px;
+    width: 20px;
+    background-color: unset;
+    border: none;
+    color: red;
+}
+
+.body__navigation ul li input {
+    position: absolute;
+    bottom: 0;
+    left: 0;
 }
 
 /*todo *********************************************************/
