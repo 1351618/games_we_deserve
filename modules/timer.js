@@ -113,7 +113,6 @@ export function TimerStop() {
 
 // запуск таймера
 export function TimerStart() {
-    // btStopTim.classList.add("active");
     // Если таймер уже выполняется, сбрасываем его
     if (timerInterval) {
         clearInterval(timerInterval);

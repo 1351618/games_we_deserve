@@ -226,6 +226,27 @@
     align-items: center;
     flex-direction: column;
 }
+.body__main_video {
+    /* border: 2px solid #000; */
+    height: 50vh;
+    width: 86vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.body__main_video video {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    border-radius: 25px;
+    display: none;
+}
+.body__main_video video.active {
+    display: block;
+}
 
 .body__main_bt-start {
     display: inline-flex;
