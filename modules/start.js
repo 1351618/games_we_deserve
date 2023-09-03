@@ -21,7 +21,7 @@ window.addEventListener("keydown", (event) => {
         TimerStart();
     }
     if (event.key === "Escape") {
-        // bodyTimerWind.classList.remove("game-start");
+        bodyTimerWind.classList.remove("game-start");
         TimerStop();
     }
 });
