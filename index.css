@@ -83,11 +83,13 @@
     border-radius: 4px;
     border: 1px solid #fbc700;
 }
-
+/*todo *********************************************************/
+/*todo ******** navigation *************************************/
 .body__navigation {
     position: fixed;
     background-color: var(--main-background);
-    right: -80px;
+    /* right: -80px; */
+    right: 0px;
     height: 100%;
     width: 100px;
     border-bottom-left-radius: 10px;
@@ -96,17 +98,48 @@
     box-shadow: var(--main-shadow);
     transition: transform 400ms;
     z-index: 20;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
 }
 .body__navigation:hover {
     transform: translateX(-80px);
 }
+
+.body__navigation ul {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.body__navigation ul li {
+    min-height: 50px;
+    width: 90%;
+    background-color: wheat;
+    border: 2px solid var(--main-border);
+    border-radius: 5px;
+    box-shadow: var(--main-shadow);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+.body__navigation ul li.active {
+    box-shadow: 0 0 8px #ff8800, 0 0 16px #ff8800, inset 0 0 4px #ff8800,
+        inset 0 0 8px #ff8800;
+    border: 1px solid #ff8800;
+}
+
+/*todo *********************************************************/
+/*todo ************* timer *************************************/
 
 .body__timer-wind {
     position: absolute;
     height: 102px;
     width: 102px;
     border-radius: 50%;
-    background-color: rgb(255, 136, 0);
+    background-color: #ff8800;
     top: 6vw;
     left: 6vw;
     transition: all 300ms ease-out;
@@ -226,6 +259,12 @@
     align-items: center;
     flex-direction: column;
 }
+
+.body__main h1 {
+    color: #ff9800;
+    margin-bottom: 2vw;
+}
+
 .body__main_video {
     /* border: 2px solid #000; */
     height: 50vh;
@@ -236,12 +275,19 @@
     justify-content: center;
 }
 
+.body__main_video p {
+    color: #fbc700;
+    font-size: 4vw;
+}
+
 .body__main_video video {
     max-width: 100%;
     max-height: 100%;
     width: auto;
     height: auto;
     border-radius: 25px;
+    box-shadow: 0 0 8px var(--main-border), 0 0 15px var(--main-border),
+        0 0 30px var(--main-border), 0 0 60px var(--main-border);
     display: none;
 }
 .body__main_video video.active {
