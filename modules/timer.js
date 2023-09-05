@@ -19,7 +19,7 @@ if (savedValue) {
     selectElement.value = savedValue;
 }
 let countdownTime = savedValue === null ? "60" : savedValue;
-console.log(savedValue);
+// console.log(savedValue);
 Timer.textContent = countdownTime;
 Timer.style.fontSize = "60px";
 riscRendering();
