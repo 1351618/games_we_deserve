@@ -57,3 +57,5 @@ function displayVideoFilesOnPage(folderPath) {
 
 // Вызываем функцию для вывода названий видеофайлов на страницу
 displayVideoFilesOnPage(folderVideo);
+
+let test = "test";
