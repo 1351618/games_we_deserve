@@ -7,6 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <link rel="stylesheet" href="./index.css" />
         <title>игры которые мы заслужили</title>
+        <link rel="icon" href="favicon.ico" />
         <style id="style">
             :root {
                 --main-background: #240088;
@@ -42,7 +43,32 @@
             </div>
             <div class="selection__list">
                 <p>выбор конкурса</p>
-                <ul></ul>
+                <ul>
+                    <li class="selection__list_video 0">
+                        <span>blind with deaf</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li class="selection__list_video 1">
+                        <span>face hand</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li class="selection__list_video 2">
+                        <span>funny pimple</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li class="selection__list_video 3">
+                        <span>legless football player</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li class="selection__list_video 4">
+                        <span>pen in the ass</span>
+                        <input type="checkbox" />
+                    </li>
+                    <li class="selection__list_video 5">
+                        <span>Правила ПивПонга</span>
+                        <input type="checkbox" />
+                    </li>
+                </ul>
             </div>
             <button class="selection-save" id="save-changes">
                 сохранить изменения
@@ -51,19 +77,19 @@
         <!--todo правая панель  навигация в конкурсах -->
         <div class="body__navigation">
             <ul>
-                <li class="active">
+                <li class="body__navigation_video 0 show active">
                     <span>ручка в жопе</span>
                     <button class="body__navigation_bt-del">✖</button>
                 </li>
-                <li>
+                <li class="body__navigation_video 1 not-show">
                     <span>длинный язык</span>
                     <button class="body__navigation_bt-del">✖</button>
                 </li>
-                <li>
+                <li class="body__navigation_video 2 show">
                     <span>задорный лещь</span>
                     <button class="body__navigation_bt-del">✖</button>
                 </li>
-                <li>
+                <li class="body__navigation_video 3 not-show">
                     <span>basketball</span>
                     <button class="body__navigation_bt-del">✖</button>
                 </li>
@@ -90,12 +116,12 @@
         <div class="body__main">
             <h1>игры которые мы заслужили</h1>
             <div class="body__main_video">
-                <p>название</p>
+                <p>Правила ПивПонга</p>
                 <video class="active" controls>
-                    <source src="./video/video_test.mp4" />
+                    <source src="./video/Правила ПивПонга.mp4" />
                 </video>
                 <video controls>
-                    <source src="./video/video_test.mp4" />
+                    <source src="./video/blind with deaf.mp4" />
                 </video>
             </div>
             <div class="body__main_bt-start">

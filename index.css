@@ -51,8 +51,8 @@ input {
     background-color: var(--main-background);
     width: 100px;
     height: 100%;
-    /* left: -80px; */
-    left: 0px;
+    left: -80px;
+    /* left: 0px; */
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     border: 2px solid var(--main-border);
@@ -223,6 +223,12 @@ input {
     background-color: unset;
     border: none;
     color: red;
+}
+ul li.body__navigation_video.show {
+    display: block;
+}
+ul li.body__navigation_video.not-show {
+    display: none;
 }
 
 /*todo *********************************************************/
