@@ -1,11 +1,11 @@
 // todo index.js
 
-import "./modules/timer.js";
-import "./modules/start.js";
-import "./modules/record_player.js";
-import "./modules/swipe.js";
-import "./modules/selected_games.js";
-import "./modules/test.js";
+import "./src/modules/timer.js";
+import "./src/modules/start.js";
+import "./src/modules/record_player.js";
+import "./src/modules/swipe.js";
+import "./src/modules/selected_games.js";
+import "./src/modules/test.js";
 
 const SaveChanges = document.getElementById("save-changes");
 
