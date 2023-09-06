@@ -23,7 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const fileList = document.getElementById("file-list");
 
     // Получаем список файлов из папки
-    fetch("/src/video/") // Указываем путь к папке с файлами
+    fetch("/static/video/") // Указываем путь к папке с файлами
         .then((response) => response.text())
         .then((data) => {
             const links = data.match(/href="\/video\/([^"]+)"/g); // Извлекаем только ссылки, начинающиеся с "/video/"
