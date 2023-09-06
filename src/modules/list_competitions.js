@@ -3,8 +3,6 @@ const ulSelectionlist = document.querySelector(".selection__list-ul");
 const ulNavigationlist = document.querySelector(".body__navigation-ul");
 const liNavig = document.querySelectorAll(".body__navigation ul li");
 
-// console.log(liListVideo);
-
 //*********************  получение списка видео  *******************************
 liListVideo.forEach((liElement, index) => {
     const videoElement = liElement.querySelector("video");
@@ -60,7 +58,6 @@ function crealeLiElementNavigation(key, videoName) {
     // li элемент
     const newLiItemN = document.createElement("li");
     newLiItemN.classList.add(key);
-    // newLiItemN.classList.add("show");
 
     // span
     const liSpan = document.createElement("span");
@@ -77,6 +74,11 @@ function crealeLiElementNavigation(key, videoName) {
 
     // добавляем на страницу
     ulNavigationlist.appendChild(newLiItemN);
+
+    // обработчик событий li
+    newLiItemN.addEventListener("click", function (event) {
+        activeLiItemN(newLiItemN);
+    });
 
     // обработчик событий кнопки
     liButton.addEventListener("click", function (event) {
@@ -110,7 +112,7 @@ window.addEventListener("DOMContentLoaded", function () {
 
     if (selectionCheckboxString) {
         selectionCheckbox = JSON.parse(selectionCheckboxString); // Обновляем глобальную переменную selectionCheckbox
-        console.log("Данные из локального хранилища:", selectionCheckbox);
+        // console.log("Данные из локального хранилища:", selectionCheckbox);
 
         for (const key in selectionCheckbox) {
             const isChecked = selectionCheckbox[key];
@@ -138,8 +140,8 @@ function deliteLiItemN(key) {
     for (const liItem of liNavig) {
         if (liItem.classList.contains(key)) {
             liItem.classList.remove("show");
-            console.log("Класс:", key);
-            console.log("Логическое значение:", false);
+            // console.log("Класс:", key);
+            // console.log("Логическое значение:", false);
 
             // Обновляем значение в локальном хранилище
             const selectionCheckboxString =
@@ -155,4 +157,24 @@ function deliteLiItemN(key) {
             break; // Прерываем цикл после обновления одного состояния
         }
     }
+}
+
+// ***********************
+
+function activeLiItemN(liItem) {
+    const liNavig = document.querySelectorAll(".body__navigation ul li");
+    const liListVideo = document.querySelectorAll(".main_video-ul li");
+
+    liNavig.forEach(function (item) {
+        item.classList.remove("active");
+    });
+    liListVideo.forEach(function (liItem) {
+        liItem.classList.remove("active");
+    });
+
+    const mainActiveIndex = parseInt(liItem.classList[0].substring(3));
+    // console.log("классом:", mainActiveIndex);
+    const secondLiElement = liListVideo[mainActiveIndex - 1];
+    secondLiElement.classList.add("active");
+    liItem.classList.add("active");
 }
