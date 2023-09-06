@@ -43,62 +43,20 @@
             </div>
             <div class="selection__list">
                 <p>выбор конкурса</p>
-                <ul>
-                    <li class="selection__list_video 0">
-                        <span>blind with deaf</span>
-                        <input type="checkbox" />
-                    </li>
-                    <li class="selection__list_video 1">
-                        <span>face hand</span>
-                        <input type="checkbox" />
-                    </li>
-                    <li class="selection__list_video 2">
-                        <span>funny pimple</span>
-                        <input type="checkbox" />
-                    </li>
-                    <li class="selection__list_video 3">
-                        <span>legless football player</span>
-                        <input type="checkbox" />
-                    </li>
-                    <li class="selection__list_video 4">
-                        <span>pen in the ass</span>
-                        <input type="checkbox" />
-                    </li>
-                    <li class="selection__list_video 5">
-                        <span>Правила ПивПонга</span>
-                        <input type="checkbox" />
-                    </li>
+                <ul class="selection__list-ul">
+                    <!--todo левый список >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
                 </ul>
             </div>
-            <button class="selection-save" id="save-changes">
-                сохранить изменения
-            </button>
+            <button class="selection-save">сохранить изменения</button>
         </div>
         <!--todo правая панель  навигация в конкурсах -->
         <div class="body__navigation">
-            <ul>
-                <li class="body__navigation_video 0 show active">
-                    <span>ручка в жопе</span>
-                    <button class="body__navigation_bt-del">✖</button>
-                </li>
-                <li class="body__navigation_video 1 not-show">
-                    <span>длинный язык</span>
-                    <button class="body__navigation_bt-del">✖</button>
-                </li>
-                <li class="body__navigation_video 2 show">
-                    <span>задорный лещь</span>
-                    <button class="body__navigation_bt-del">✖</button>
-                </li>
-                <li class="body__navigation_video 3 not-show">
-                    <span>basketball</span>
-                    <button class="body__navigation_bt-del">✖</button>
-                </li>
+            <ul class="body__navigation-ul">
+                <!--todo павый список >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>  -->
             </ul>
-            <ul id="file-list">
-                <!-- Здесь будут отображаться имена файлов -->
-                <li>123</li>
-            </ul>
+            <button class="selection-save">сохранить изменения</button>
         </div>
+
         <div class="body__timer-wind">
             <div class="timer-wind__timer"></div>
             <button class="timer-wind__stop-tim">
@@ -121,12 +79,30 @@
             <h1>игры которые мы заслужили</h1>
             <div class="body__main_video">
                 <p>Правила ПивПонга</p>
-                <video class="active" controls>
-                    <source src="./static/video/Правила ПивПонга.mp4" />
-                </video>
-                <video controls>
-                    <source src="./static/video/face hand.mp4" />
-                </video>
+                <ul class="main_video-ul">
+                    <li class="main_video-li">
+                        <video class="active" controls>
+                            <source src="./src/video/Правила ПивПонга.mp4" />
+                        </video>
+                    </li>
+                    <li class="main_video-li">
+                        <video controls>
+                            <source src="./src/video/face hand.mp4" />
+                        </video>
+                    </li>
+                    <li class="main_video-li">
+                        <video controls>
+                            <source src="./src/video/funny pimple.mp4" />
+                        </video>
+                    </li>
+                    <li class="main_video-li">
+                        <video controls>
+                            <source
+                                src="./src/video/legless football player.mp4"
+                            />
+                        </video>
+                    </li>
+                </ul>
             </div>
             <div class="body__main_bt-start">
                 <button class="bt-start">start</button>

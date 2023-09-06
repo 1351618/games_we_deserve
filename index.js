@@ -5,10 +5,12 @@ import "./src/modules/start.js";
 import "./src/modules/record_player.js";
 import "./src/modules/swipe.js";
 import "./src/modules/selected_games.js";
-import "./src/modules/test.js";
+import "./src/modules/list_competitions.js";
 
-const SaveChanges = document.getElementById("save-changes");
+const saveChangesButtons = document.querySelectorAll(".selection-save");
 
-SaveChanges.addEventListener("click", function () {
-    window.location.reload();
+saveChangesButtons.forEach((button) => {
+    button.addEventListener("click", function () {
+        window.location.reload();
+    });
 });

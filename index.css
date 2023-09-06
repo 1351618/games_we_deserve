@@ -57,7 +57,7 @@ input {
     border-top-right-radius: 10px;
     border: 2px solid var(--main-border);
     box-shadow: var(--main-shadow);
-    transition: transform 400ms;
+    transition: transform 600ms;
     z-index: 20;
     display: flex;
     flex-direction: column;
@@ -166,11 +166,13 @@ input {
     border-top-left-radius: 10px;
     border: 2px solid var(--main-border);
     box-shadow: var(--main-shadow);
-    transition: transform 400ms;
+    transition: transform 600ms;
     z-index: 20;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+    padding: 20px 0;
 }
 .body__navigation:hover {
     transform: translateX(-80px);
@@ -178,6 +180,7 @@ input {
 
 .body__navigation ul {
     height: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
@@ -200,9 +203,13 @@ input {
     position: relative;
     box-shadow: var(--box-shadow-text);
     border: 1px solid #ff8800;
+    display: none;
 }
 .body__navigation ul li.active {
     animation: pulseActive 1s infinite;
+}
+.body__navigation ul li.show {
+    display: flex;
 }
 
 @keyframes pulseActive {
@@ -214,6 +221,14 @@ input {
         border: 1px solid var(--main-background);
     }
 }
+.body__navigation-ul li {
+    display: none;
+}
+
+.body__navigation-ul li span {
+    padding-bottom: 14px;
+    cursor: pointer;
+}
 .body__navigation_bt-del {
     position: absolute;
     bottom: 0;
@@ -223,12 +238,6 @@ input {
     background-color: unset;
     border: none;
     color: red;
-}
-ul li.body__navigation_video.show {
-    display: block;
-}
-ul li.body__navigation_video.not-show {
-    display: none;
 }
 
 /*todo *********************************************************/
