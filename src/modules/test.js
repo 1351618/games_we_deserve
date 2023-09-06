@@ -47,3 +47,5 @@ document.addEventListener("DOMContentLoaded", function () {
         })
         .catch((error) => console.error("Ошибка загрузки файлов:", error));
 });
+
+console.log(">>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>");
