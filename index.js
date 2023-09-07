@@ -14,3 +14,9 @@ saveChangesButtons.forEach((button) => {
         window.location.reload();
     });
 });
+
+document.addEventListener("DOMContentLoaded", function () {
+    var video = document.getElementById("myVideo");
+    video.play();
+    console.log("видео запущенно");
+});
