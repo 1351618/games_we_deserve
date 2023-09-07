@@ -32,6 +32,5 @@ window.addEventListener("keydown", (event) => {
 // ******************  остановка таймера  *********************
 
 btStopTim.addEventListener("click", () => {
-    console.log("stop");
     TimerStop();
 });

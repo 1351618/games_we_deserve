@@ -10,7 +10,6 @@ function timeOutEffect() {
     const timePaus = [50, 50, 100, 100, 500, 500];
     let index = 0;
     function changeColor() {
-        console.log(index % 2 === 0 ? "красный" : "синий");
         mainBackground = index % 2 === 0 ? "#ff0000bd" : "#240088";
         mainBorder = index % 2 === 0 ? "#ad0000bd" : "#14004d";
         appointment();

@@ -18,5 +18,4 @@ saveChangesButtons.forEach((button) => {
 document.addEventListener("DOMContentLoaded", function () {
     var video = document.getElementById("myVideo");
     video.play();
-    console.log("видео запущенно");
 });

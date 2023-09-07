@@ -57,7 +57,6 @@ input {
     width: 100px;
     height: 100%;
     left: -80px;
-    /* left: 0px; */
     border-bottom-right-radius: 10px;
     border-top-right-radius: 10px;
     border: 2px solid var(--main-border);
@@ -83,6 +82,11 @@ input {
     gap: 3px;
     width: 100%;
     align-items: center;
+}
+
+.selection__sounds-timer-mp3 p {
+    font-family: "VlaShu";
+    text-shadow: 1px 1px 1px #ff0000, 3px 3px 8px #ff0000;
 }
 .selection__sounds-timer-mp3 div {
     width: 100%;
@@ -118,6 +122,11 @@ input {
     width: 100%;
     color: #ff9800;
     text-align: center;
+}
+
+.selection__list p {
+    font-family: "VlaShu";
+    text-shadow: 1px 1px 3px #ff0000;
 }
 
 .selection__list ul {
@@ -164,7 +173,6 @@ input {
     position: fixed;
     background-color: var(--main-background);
     right: -80px;
-    /* right: 0px; */
     height: 100%;
     width: 100px;
     border-bottom-left-radius: 10px;
@@ -225,7 +233,6 @@ input {
     100% {
         box-shadow: 0 0 8px #ffffff, 0 0 16px #ffffff, inset 0 0 4px #ffffff,
             inset 0 0 8px #ffffff;
-        /* border: 1px solid var(--main-background); */
         border: 1px solid #ffffff;
     }
 }
@@ -323,9 +330,8 @@ input {
     100% {
         background-color: #ff0000;
         box-shadow: 0 0 15px #ff0000, 0 0 30px #ff0000, 0 0 55px #ff0000,
-            0 0 61px #ff0000, 0 0 15px #ff0000,
-            /* Другой цвет тени */ 0 0 30px #ff0000, 0 0 55px #ff0000,
-            0 0 61px #ff0000;
+            0 0 61px #ff0000, 0 0 15px #ff0000, 0 0 30px #ff0000,
+            0 0 55px #ff0000, 0 0 61px #ff0000;
     }
 }
 
@@ -341,7 +347,6 @@ input {
     width: 50px;
     background-color: var(--main-border);
     border-radius: 2px;
-    /* position: absolute; */
     border: 1px solid #8b0000;
 }
 
@@ -442,8 +447,6 @@ input {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
-    /* margin-top: 15vh; */
 }
 
 .main_video-ul {
@@ -498,7 +501,6 @@ input {
     font-weight: bold;
     color: #fbc700;
     cursor: pointer;
-    /* z-index: 5; */
     position: relative;
     display: flex;
     justify-content: center;
@@ -514,7 +516,6 @@ input {
 }
 
 .bt-start:hover {
-    /* background-color: #3800d5; */
     box-shadow: 0 0 8px #3800d5, 0 0 16px #3800d5, inset 4px -4px 4px #000000a1,
         inset -4px 4px 4px #ffffff9a;
     text-shadow: 0 0 4px #fbc700, 0 0 8px #fbc700;

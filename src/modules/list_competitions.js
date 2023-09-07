@@ -93,10 +93,7 @@ function handleCheckboxClick(checkbox, listItemClass) {
     const isChecked = checkbox.checked;
     const listItemClassName = listItemClass.value;
 
-    console.log("Класс элемента:", listItemClassName);
-    console.log("Состояние чекбокса:", isChecked);
     selectionCheckbox[listItemClassName] = isChecked;
-    console.log(selectionCheckbox);
 
     // Преобразуем объект в строку JSON
     const selectionCheckboxString = JSON.stringify(selectionCheckbox);

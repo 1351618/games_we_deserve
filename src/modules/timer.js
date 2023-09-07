@@ -20,7 +20,6 @@ if (savedValue) {
     selectElement.value = savedValue;
 }
 let countdownTime = savedValue === null ? "60" : savedValue;
-// console.log(savedValue);
 Timer.textContent = countdownTime;
 Timer.style.fontSize = "60px";
 riscRendering();
@@ -29,7 +28,6 @@ riscRendering();
 selectElement.addEventListener("change", function () {
     const selectedValue = selectElement.value;
     localStorage.setItem("selectedValue", selectedValue);
-    console.log("Выбранное значение:", selectedValue);
     riscRendering();
 });
 
@@ -84,9 +82,7 @@ function riscRendering() {
         timeRisc.style.backgroundColor =
             i <= countdownTime ? "#00dd09" : "#ff0000";
 
-        // ! выставляем цвет риски
-
-        // Timer.style.backgroundColor = countdownTime < 10 ? "#ff0000" : "";
+        // выставляем цвет риски
         Timer.classList.toggle("little-time", countdownTime < 10);
 
         Timer.appendChild(timeRisc);
