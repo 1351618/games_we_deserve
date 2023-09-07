@@ -8,7 +8,8 @@ const TimerMP3_Audio = document.getElementById("sounds-timer-mp3__audio");
 const btStopTim = document.querySelector(".timer-wind__stop-tim");
 
 // Проверяем, есть ли сохраненное значение в localStorage
-const savedValue = localStorage.getItem("selectedValue");
+// ! const savedValue = localStorage.getItem("selectedValue");
+const savedValue = localStorage.getItem("selectedValue") || 60;
 let timerInterval; // Переменная для хранения интервала
 const Timer = document.querySelector(".timer-wind__timer");
 let WindTimerHeight = 100;

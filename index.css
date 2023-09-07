@@ -256,8 +256,7 @@ input {
     height: 102px;
     width: 102px;
     border-radius: 50%;
-    /* background-color: #ff8800; */
-    top: 6vw;
+    top: 70px;
     left: 6vw;
     transition: all 300ms ease-out;
 }
@@ -418,7 +417,6 @@ input {
 .body__main {
     height: 100vh;
     width: 100vw;
-    /* background-color: #413f3f; */
     display: flex;
     justify-content: space-around;
     align-items: center;
@@ -430,6 +428,10 @@ input {
     margin-bottom: 2vw;
     font-family: "VlaShu";
     text-shadow: 1px 1px 1px #ff0000, 3px 3px 8px #ff0000;
+    text-align: center;
+    @media (max-width: 500px) {
+        font-size: 20px;
+    }
 }
 
 .body__main_video {
