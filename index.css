@@ -1,3 +1,8 @@
+@font-face {
+    font-family: "VlaShu";
+    src: url("./src/fonts/VlaShu.ttf") format("truetype");
+}
+
 :root {
     --main-shadow: 0 0 8px var(--main-border), 0 0 16px var(--main-border),
         inset 0 0 4px var(--main-border), inset 0 0 8px var(--main-border);
@@ -421,8 +426,10 @@ input {
 }
 
 .body__main h1 {
-    color: #ff9800;
+    color: #9300ff;
     margin-bottom: 2vw;
+    font-family: "VlaShu";
+    text-shadow: 1px 1px 1px #ff0000, 3px 3px 8px #ff0000;
 }
 
 .body__main_video {
@@ -456,6 +463,8 @@ input {
 .main_video-li p {
     color: #fbc700;
     font-size: 4vw;
+    font-family: "VlaShu";
+    text-shadow: 1px 1px 1px #e91e63, 3px 3px 8px #ffeb3b;
 }
 .main_video-li video {
     max-width: 100%;
