@@ -251,10 +251,15 @@ input {
     height: 102px;
     width: 102px;
     border-radius: 50%;
-    background-color: #ff8800;
+    /* background-color: #ff8800; */
     top: 6vw;
     left: 6vw;
     transition: all 300ms ease-out;
+}
+
+.body__timer-wind_fon {
+    position: absolute;
+    width: 100%;
 }
 .body__timer-wind.game-start {
     position: absolute;
@@ -271,7 +276,7 @@ input {
     position: absolute;
     height: 100px;
     width: 100px;
-    background-color: aqua;
+    background-color: #00a4ff;
     border-radius: 50%;
     top: 50%;
     left: 50%;
@@ -280,6 +285,16 @@ input {
     display: flex;
     align-items: center;
     justify-content: center;
+    opacity: 0.6;
+}
+
+.body__timer-wind.game-start .body__timer-wind_fon {
+    height: 300px;
+    width: 300px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .body__timer-wind.game-start .timer-wind__timer {
@@ -288,6 +303,7 @@ input {
     width: 300px;
     background-color: aqua;
 }
+
 .little-time {
     background-color: #ff5722e6;
 }
@@ -361,7 +377,7 @@ input {
     height: 50px;
     width: 50px;
 }
-
+/* ********************* видео заднего фона ************************** */
 .body__fon-video {
     position: absolute;
     top: 0;
@@ -372,14 +388,28 @@ input {
     justify-content: center;
     align-items: center;
     z-index: -1;
+    opacity: 1;
 }
 
 .body__fon-video video {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    animation: fade 4s linear infinite;
 }
 
+@keyframes fade {
+    0% {
+        opacity: 0.6;
+    }
+    50% {
+        opacity: 0.2;
+    }
+    100% {
+        opacity: 0.6;
+    }
+}
+/* *********************** main *************************** */
 .body__main {
     height: 100vh;
     width: 100vw;
@@ -435,6 +465,7 @@ input {
         0 0 30px var(--main-border), 0 0 60px var(--main-border);
 }
 
+/* ********************* кнопка стирт *************************** */
 .body__main_bt-start {
     display: inline-flex;
     justify-content: center;
@@ -453,10 +484,23 @@ input {
     font-weight: bold;
     color: #fbc700;
     cursor: pointer;
+    /* z-index: 5; */
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+}
+
+.body__main_bt-start_fon {
+    position: absolute;
+    height: 114%;
+    width: 130%;
+    opacity: 0.3;
 }
 
 .bt-start:hover {
-    background-color: #3800d5;
+    /* background-color: #3800d5; */
     box-shadow: 0 0 8px #3800d5, 0 0 16px #3800d5, inset 4px -4px 4px #000000a1,
         inset -4px 4px 4px #ffffff9a;
     text-shadow: 0 0 4px #fbc700, 0 0 8px #fbc700;
